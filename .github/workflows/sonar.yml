@@ -1,24 +1,20 @@
-name: SonarQube analysis
+name: Sonarcloud Analyze
 
 on:
+  # Trigger analysis when pushing in master or pull requests, and when creating a pull request.
   push:
-    branches: ['main']
-  # workflow_dispatch:
-
-permissions:
-  pull-requests: read # allows SonarQube to decorate PRs with analysis results
+    branches:
+      - main
 
 jobs:
-
-  Analysis:
+  sonarqube:
     runs-on: ubuntu-latest
-
     steps:
-      - name: run simple hello world
-      - run: echo "Hello world"
+      - uses: actions/checkout@v4
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of reporting.
+          fetch-depth: 0
 
-      - name: echo to file
-      - run: echo "Hello world" > test
-
-      - name: print 
-      - run: ls -rt .
+       - name: cat app
+         run: cat app.py
+        
