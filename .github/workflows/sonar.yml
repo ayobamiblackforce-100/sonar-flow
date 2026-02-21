@@ -24,6 +24,6 @@ jobs:
         with:
           args: >
             -Dsonar.qualitygate.wait=false
-            -Dsonar.projectKey=ayobamiblackforce-sonar-flow 
+            -Dsonar.projectKey=ayobamiblackforce-100_sonar-flow
             -Dsonar.organization=ayobamiblackforce-100
 
